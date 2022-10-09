@@ -23,11 +23,11 @@ struct DailyForecastView: View {
             VStack {
                 Text(weatherFormattedValue(minTemperature))
                     .foregroundColor(.appText)
-//                    .font(.appBodyBold)
+                    .font(.appBodyBold)
                 
                 Text("min")
                     .foregroundColor(.appText)
-//                    .font(.appBody)
+                    .font(.appBody)
             }
             
             Spacer()
@@ -35,11 +35,11 @@ struct DailyForecastView: View {
             VStack {
                 Text(weatherFormattedValue(currentTemperature))
                     .foregroundColor(.appText)
-//                    .font(.appBodyBold)
+                    .font(.appBodyBold)
                 
                 Text("Current")
                     .foregroundColor(.appText)
-//                    .font(.appBody)
+                    .font(.appBody)
             }
             
             Spacer()
@@ -47,11 +47,11 @@ struct DailyForecastView: View {
             VStack {
                 Text(weatherFormattedValue(maxTemperature))
                     .foregroundColor(.appText)
-//                    .font(.appBodyBold)
+                    .font(.appBodyBold)
                 
                 Text("max")
                     .foregroundColor(.appText)
-//                    .font(.appBody)
+                    .font(.appBody)
             }
             
         }
