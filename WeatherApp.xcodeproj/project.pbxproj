@@ -16,6 +16,7 @@
 		52AD4A0728F326F9001B3DEA /* OpenWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A0628F326F9001B3DEA /* OpenWeatherService.swift */; };
 		52AD4A0A28F32722001B3DEA /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A0928F32722001B3DEA /* Weather.swift */; };
 		52AD4A0C28F3272D001B3DEA /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A0B28F3272D001B3DEA /* Forecast.swift */; };
+		52AD4A0F28F327F8001B3DEA /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A0E28F327F8001B3DEA /* URLSession+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		52AD4A0628F326F9001B3DEA /* OpenWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherService.swift; sourceTree = "<group>"; };
 		52AD4A0928F32722001B3DEA /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		52AD4A0B28F3272D001B3DEA /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		52AD4A0E28F327F8001B3DEA /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		52AD4A0028F326D2001B3DEA /* WeatherService */ = {
 			isa = PBXGroup;
 			children = (
+				52AD4A0D28F327EB001B3DEA /* Extensions */,
 				52AD4A0828F32717001B3DEA /* Models */,
 				52AD4A0428F326F2001B3DEA /* WeatherService.swift */,
 				52AD4A0628F326F9001B3DEA /* OpenWeatherService.swift */,
@@ -112,6 +115,14 @@
 				52AD4A0B28F3272D001B3DEA /* Forecast.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		52AD4A0D28F327EB001B3DEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				52AD4A0E28F327F8001B3DEA /* URLSession+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AD4A0F28F327F8001B3DEA /* URLSession+Extensions.swift in Sources */,
 				52AD4A0C28F3272D001B3DEA /* Forecast.swift in Sources */,
 				52AD4A0528F326F2001B3DEA /* WeatherService.swift in Sources */,
 				52AD4A0728F326F9001B3DEA /* OpenWeatherService.swift in Sources */,
