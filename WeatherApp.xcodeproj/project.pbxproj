@@ -13,6 +13,8 @@
 		52AD49FC28F3262D001B3DEA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD49FB28F3262D001B3DEA /* Color+Extensions.swift */; };
 		52AD49FE28F3263A001B3DEA /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD49FD28F3263A001B3DEA /* Image+Extensions.swift */; };
 		52AD4A1B28F32971001B3DEA /* WeatherService in Frameworks */ = {isa = PBXBuildFile; productRef = 52AD4A1A28F32971001B3DEA /* WeatherService */; };
+		52AD4A2228F37D79001B3DEA /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A2128F37D79001B3DEA /* ForecastData.swift */; };
+		52AD4A2528F3808F001B3DEA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 52AD4A2428F3808F001B3DEA /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		52AD49FD28F3263A001B3DEA /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		52AD4A1828F32966001B3DEA /* WeatherService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WeatherService; path = Packages/WeatherService; sourceTree = "<group>"; };
 		52AD4A1C28F32D06001B3DEA /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = Packages/Networking; sourceTree = "<group>"; };
+		52AD4A2128F37D79001B3DEA /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AD4A2528F3808F001B3DEA /* ComposableArchitecture in Frameworks */,
 				52AD4A1B28F32971001B3DEA /* WeatherService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +63,7 @@
 		52472E4D28F322650006B213 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				52AD4A1D28F37D20001B3DEA /* Modules */,
 				52AD49FA28F32610001B3DEA /* Extensions */,
 				52472E5C28F322CA0006B213 /* Resources */,
 				52472E4E28F322650006B213 /* WeatherApp.swift */,
@@ -100,6 +105,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		52AD4A1D28F37D20001B3DEA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				52AD4A2028F37D5B001B3DEA /* Forecast */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		52AD4A2028F37D5B001B3DEA /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				52AD4A2128F37D79001B3DEA /* ForecastData.swift */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,6 +139,7 @@
 			name = WeatherApp;
 			packageProductDependencies = (
 				52AD4A1A28F32971001B3DEA /* WeatherService */,
+				52AD4A2428F3808F001B3DEA /* ComposableArchitecture */,
 			);
 			productName = WeatherApp;
 			productReference = 52472E4B28F322650006B213 /* WeatherApp.app */;
@@ -147,6 +169,9 @@
 				Base,
 			);
 			mainGroup = 52472E4228F322650006B213;
+			packageReferences = (
+				52AD4A2328F3808F001B3DEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 52472E4C28F322650006B213 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -175,6 +200,7 @@
 			files = (
 				52AD49FE28F3263A001B3DEA /* Image+Extensions.swift in Sources */,
 				52472E4F28F322650006B213 /* WeatherApp.swift in Sources */,
+				52AD4A2228F37D79001B3DEA /* ForecastData.swift in Sources */,
 				52AD49FC28F3262D001B3DEA /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,10 +399,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		52AD4A2328F3808F001B3DEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		52AD4A1A28F32971001B3DEA /* WeatherService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WeatherService;
+		};
+		52AD4A2428F3808F001B3DEA /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52AD4A2328F3808F001B3DEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

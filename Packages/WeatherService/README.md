@@ -4,6 +4,7 @@ Contains the networking code needed to perform a HTTP request to the `OpenWeathe
 
 ## Details:
 
+- **Minimum target:** iOS 15
 - **Current coverage:** 100%
 
 ## Dependencies:
