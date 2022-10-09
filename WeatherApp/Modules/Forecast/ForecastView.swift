@@ -19,20 +19,33 @@ struct ForecastView: View {
             ZStack {
                 
                 Color.weatherSunny
-                    .ignoresSafeArea()
-                
-                VStack(spacing: 24.0) {
+        
+                VStack {
                     
                     Image.forecastSunny
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .edgesIgnoringSafeArea(.all)
+                        .background(Color.red)
                     
-                    Color.weatherSunny
+                    VStack {
+                        
+                        DailyForecastView(
+                            minTemperature: 19,
+                            currentTemperature: 20,
+                            maxTemperature: 21
+                        )
+                        .padding(24.0)
+                        
+                        Divider()
+                            .frame(height: 1)
+                            .overlay(Color.appText)
+                        
+                        Spacer()
+                    }
+                    
                 }
-                
             }
-            
+            .ignoresSafeArea()
         }
     }
 }
