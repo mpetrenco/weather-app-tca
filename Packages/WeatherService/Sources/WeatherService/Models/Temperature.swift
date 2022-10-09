@@ -14,14 +14,6 @@ public struct Temperature: Codable, Equatable {
     public let current: Double
     public let min: Double
     public let max: Double
-
-    // MARK: - Initializers
-    
-    public init() {
-        current = 0
-        min = 0
-        max = 0
-    }
     
     // MARK: - Codable
     

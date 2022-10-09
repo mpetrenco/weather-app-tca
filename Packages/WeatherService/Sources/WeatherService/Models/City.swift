@@ -11,13 +11,6 @@ public struct City: Equatable, Codable {
     
     // MARK: - Parameters
     
-    public let name: String
-    public let country: String
-    
-    // MARK: - Initializers
-    
-    public init() {
-        name = ""
-        country = ""
-    }
+    public var name: String
+    public var country: String
 }

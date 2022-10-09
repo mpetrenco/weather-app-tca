@@ -21,25 +21,6 @@ public struct Weather: Codable, Equatable {
     public let data: [WeatherData]
     public let currentTemperature: Temperature
     
-    // MARK: - Convenience Properties
-
-    public var date: Date {
-        Date(timeIntervalSince1970: dateTime)
-    }
-    
-    public var weatherType: WeatherType {
-        guard let value = data.first?.name else { return .sunny }
-        return WeatherType(rawValue: value) ?? .sunny
-    }
-    
-    // MARK: - Initializers
-    
-    public init() {
-        dateTime = 0
-        data = []
-        currentTemperature = Temperature()
-    }
-    
     // MARK: - CodingKeys
     
     enum CodingKeys: String, CodingKey {

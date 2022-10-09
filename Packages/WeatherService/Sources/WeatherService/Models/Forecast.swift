@@ -8,14 +8,12 @@
 import Foundation
 
 public struct Forecast: Codable, Equatable {
-    public let city: City
-    public let weatherBundle: [Weather]
     
-    public init() {
-        city = City()
-        weatherBundle = []
-    }
+    // MARK: - Properties
     
+    public var city: City
+    public var weatherBundle: [Weather]
+
     // MARK: - Codable
     
     enum CodingKeys: String, CodingKey {
