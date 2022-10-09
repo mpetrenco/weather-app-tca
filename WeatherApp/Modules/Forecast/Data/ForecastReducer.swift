@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Networking
 
 // MARK: - Reducer
 
@@ -26,8 +27,18 @@ let forecastReducer = ForecastReducer { state, action, environment in
         return .none
         
     case .handleWeatherResponse(.failure(let error)):
-        // TODO: Handle error
-        print(error)
+        
+        if let networkError = error as? NetworkError {
+            switch networkError {
+            case .fail(let statusCode):
+                state.errorMessage = "Weather fetch failed with status \(statusCode)"
+            default:
+                state.errorMessage = "Something went wrong!"
+            }
+        } else {
+            state.errorMessage = "Something went wrong!"
+        }
+        
         return .none
     }
 }

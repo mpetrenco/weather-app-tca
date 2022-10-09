@@ -20,6 +20,8 @@
 		52AD4A2D28F38320001B3DEA /* DailyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A2C28F38320001B3DEA /* DailyForecastView.swift */; };
 		52AD4A3028F38482001B3DEA /* ForecastUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A2F28F38482001B3DEA /* ForecastUtils.swift */; };
 		52AD4A3228F38715001B3DEA /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3128F38715001B3DEA /* Font+Extensions.swift */; };
+		52AD4A3428F38F35001B3DEA /* ForecastContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3328F38F35001B3DEA /* ForecastContentView.swift */; };
+		52AD4A3628F38F93001B3DEA /* ForecastErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3528F38F93001B3DEA /* ForecastErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		52AD4A2C28F38320001B3DEA /* DailyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastView.swift; sourceTree = "<group>"; };
 		52AD4A2F28F38482001B3DEA /* ForecastUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastUtils.swift; sourceTree = "<group>"; };
 		52AD4A3128F38715001B3DEA /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
+		52AD4A3328F38F35001B3DEA /* ForecastContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastContentView.swift; sourceTree = "<group>"; };
+		52AD4A3528F38F93001B3DEA /* ForecastErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				52AD4A2C28F38320001B3DEA /* DailyForecastView.swift */,
+				52AD4A3328F38F35001B3DEA /* ForecastContentView.swift */,
+				52AD4A3528F38F93001B3DEA /* ForecastErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,10 +244,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AD4A3228F38715001B3DEA /* Font+Extensions.swift in Sources */,
+				52AD4A3428F38F35001B3DEA /* ForecastContentView.swift in Sources */,
 				52AD49FE28F3263A001B3DEA /* Image+Extensions.swift in Sources */,
 				52AD4A2D28F38320001B3DEA /* DailyForecastView.swift in Sources */,
 				52AD4A2928F38216001B3DEA /* ForecastReducer.swift in Sources */,
 				52AD4A2728F380F4001B3DEA /* ForecastView.swift in Sources */,
+				52AD4A3628F38F93001B3DEA /* ForecastErrorView.swift in Sources */,
 				52472E4F28F322650006B213 /* WeatherApp.swift in Sources */,
 				52AD4A2228F37D79001B3DEA /* ForecastData.swift in Sources */,
 				52AD4A3028F38482001B3DEA /* ForecastUtils.swift in Sources */,

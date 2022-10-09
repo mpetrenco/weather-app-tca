@@ -28,34 +28,25 @@ struct ForecastView: View {
                         .background(Color.red)
                     
                     if let weather = viewStore.weather {
-                        
-                        VStack {
-
-                            DailyForecastView(
-                                minTemperature: weather.temperature.min,
-                                currentTemperature: weather.temperature.current,
-                                maxTemperature: weather.temperature.max
-                            )
-                            .padding(24.0)
-                            
-                            Divider()
-                                .frame(height: 1)
-                                .overlay(Color.appText)
-                            
-                            Spacer()
-                        }
+                        ForecastContentView(weather: weather)
                     }
                     
-                    Spacer()
+                    if let errorMessage = viewStore.errorMessage {
+                        ForecastErrorView(
+                            message: errorMessage,
+                            onRetryTap: {
+                                viewStore.send(
+                                    .fetchWeather(latitude: 20.0, longitude: 20.0)
+                                )
+                            }
+                        )
+                    }
                 }
             }
             .ignoresSafeArea()
             .onAppear {
                 viewStore.send(
-                    .fetchWeather(
-                        latitude: 20.0,
-                        longitude: 20.0
-                    )
+                    .fetchWeather(latitude: 20.0, longitude: 20.0)
                 )
             }
         }
