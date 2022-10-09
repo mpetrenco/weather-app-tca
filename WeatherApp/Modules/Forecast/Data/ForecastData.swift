@@ -19,6 +19,7 @@ struct ForecastState: Equatable {
 
 enum ForecastAction {
     case fetchWeather(latitude: Double, longitude: Double)
+    case handleWeatherResponse(Result<Weather, Error>)
 }
 
 // MARK: - Environment

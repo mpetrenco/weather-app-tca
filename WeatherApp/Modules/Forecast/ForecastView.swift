@@ -27,22 +27,26 @@ struct ForecastView: View {
                         .aspectRatio(contentMode: .fit)
                         .background(Color.red)
                     
-                    VStack {
+                    if let weather = viewStore.weather {
                         
-                        DailyForecastView(
-                            minTemperature: 19,
-                            currentTemperature: 20,
-                            maxTemperature: 21
-                        )
-                        .padding(24.0)
-                        
-                        Divider()
-                            .frame(height: 1)
-                            .overlay(Color.appText)
-                        
-                        Spacer()
+                        VStack {
+
+                            DailyForecastView(
+                                minTemperature: weather.temperature.min,
+                                currentTemperature: weather.temperature.current,
+                                maxTemperature: weather.temperature.max
+                            )
+                            .padding(24.0)
+                            
+                            Divider()
+                                .frame(height: 1)
+                                .overlay(Color.appText)
+                            
+                            Spacer()
+                        }
                     }
                     
+                    Spacer()
                 }
             }
             .ignoresSafeArea()

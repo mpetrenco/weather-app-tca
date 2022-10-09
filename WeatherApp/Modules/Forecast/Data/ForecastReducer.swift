@@ -12,7 +12,22 @@ import Foundation
 let forecastReducer = ForecastReducer { state, action, environment in
     switch action {
     case let .fetchWeather(latitude, longitude):
-        print("Called")
+        return .task {
+            let result = await environment.weatherService.fetchCurrentWeather(
+                latitude: latitude,
+                longitude: longitude
+            )
+            
+            return .handleWeatherResponse(result)
+        }
+        
+    case .handleWeatherResponse(.success(let response)):
+        state.weather = response
+        return .none
+        
+    case .handleWeatherResponse(.failure(let error)):
+        // TODO: Handle error
+        print(error)
         return .none
     }
 }

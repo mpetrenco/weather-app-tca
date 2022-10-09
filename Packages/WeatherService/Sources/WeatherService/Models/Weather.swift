@@ -19,13 +19,13 @@ public struct Weather: Codable, Equatable {
     
     public let dateTime: Double
     public let data: [WeatherData]
-    public let currentTemperature: Temperature
+    public let temperature: Temperature
     
     // MARK: - CodingKeys
     
     enum CodingKeys: String, CodingKey {
         case dateTime = "dt"
         case data = "weather"
-        case currentTemperature = "main"
+        case temperature = "main"
     }
 }
