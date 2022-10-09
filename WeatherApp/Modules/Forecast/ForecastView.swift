@@ -19,7 +19,7 @@ struct ForecastView: View {
             ZStack {
                 
                 Color.weatherSunny
-        
+                
                 VStack {
                     
                     Image.forecastSunny
@@ -46,6 +46,14 @@ struct ForecastView: View {
                 }
             }
             .ignoresSafeArea()
+            .onAppear {
+                viewStore.send(
+                    .fetchWeather(
+                        latitude: 20.0,
+                        longitude: 20.0
+                    )
+                )
+            }
         }
     }
 }

@@ -11,11 +11,15 @@ import WeatherService
 
 // MARK: - State
 
-struct ForecastState: Equatable {}
+struct ForecastState: Equatable {
+    var weather: Weather?
+}
 
 // MARK: - Actions
 
-enum ForecastAction {}
+enum ForecastAction {
+    case fetchWeather(latitude: Double, longitude: Double)
+}
 
 // MARK: - Environment
 

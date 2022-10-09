@@ -10,5 +10,9 @@ import Foundation
 // MARK: - Reducer
 
 let forecastReducer = ForecastReducer { state, action, environment in
-    .none
+    switch action {
+    case let .fetchWeather(latitude, longitude):
+        print("Called")
+        return .none
+    }
 }
