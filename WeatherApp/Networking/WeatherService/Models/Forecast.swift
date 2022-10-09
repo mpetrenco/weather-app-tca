@@ -7,6 +7,19 @@
 
 import Foundation
 
-struct Forecast {
+public struct Forecast: Codable, Equatable {
+    public let city: City
+    public let weatherBundle: [Weather]
     
+    public init() {
+        city = City()
+        weatherBundle = []
+    }
+    
+    // MARK: - Codable
+    
+    enum CodingKeys: String, CodingKey {
+        case city
+        case weatherBundle = "list"
+    }
 }
