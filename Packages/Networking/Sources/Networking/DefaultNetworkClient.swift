@@ -15,6 +15,18 @@ public enum NetworkError: Error {
 
 public struct DefaultNetworkClient: NetworkClient {
     
+    // MARK: - Properties
+    
+    private let urlSession: URLSession
+    
+    // MARK: - Initializers
+    
+    init(urlSession: URLSession = URLSession.shared) {
+        self.urlSession = urlSession
+    }
+    
+    // MARK: - Protocol Methods
+    
     public func get<T: Codable>(
         url: URL?,
         expecting type: T.Type
@@ -25,7 +37,7 @@ public struct DefaultNetworkClient: NetworkClient {
         }
         
         do {
-            let (data, response) = try await URLSession.shared.data(from: url)
+            let (data, response) = try await urlSession.data(from: url)
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 return .failure(NetworkError.unknown)
