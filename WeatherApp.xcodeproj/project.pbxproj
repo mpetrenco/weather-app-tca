@@ -22,6 +22,7 @@
 		52AD4A3228F38715001B3DEA /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3128F38715001B3DEA /* Font+Extensions.swift */; };
 		52AD4A3428F38F35001B3DEA /* ForecastContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3328F38F35001B3DEA /* ForecastContentView.swift */; };
 		52AD4A3628F38F93001B3DEA /* ForecastErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3528F38F93001B3DEA /* ForecastErrorView.swift */; };
+		52AD4A3828F391DC001B3DEA /* ForecastLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3728F391DC001B3DEA /* ForecastLoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		52AD4A3128F38715001B3DEA /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		52AD4A3328F38F35001B3DEA /* ForecastContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastContentView.swift; sourceTree = "<group>"; };
 		52AD4A3528F38F93001B3DEA /* ForecastErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastErrorView.swift; sourceTree = "<group>"; };
+		52AD4A3728F391DC001B3DEA /* ForecastLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				52AD4A2C28F38320001B3DEA /* DailyForecastView.swift */,
 				52AD4A3328F38F35001B3DEA /* ForecastContentView.swift */,
 				52AD4A3528F38F93001B3DEA /* ForecastErrorView.swift */,
+				52AD4A3728F391DC001B3DEA /* ForecastLoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AD4A3828F391DC001B3DEA /* ForecastLoadingView.swift in Sources */,
 				52AD4A3228F38715001B3DEA /* Font+Extensions.swift in Sources */,
 				52AD4A3428F38F35001B3DEA /* ForecastContentView.swift in Sources */,
 				52AD49FE28F3263A001B3DEA /* Image+Extensions.swift in Sources */,

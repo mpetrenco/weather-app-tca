@@ -14,6 +14,7 @@ import WeatherService
 struct ForecastState: Equatable {
     var weather: Weather?
     var errorMessage: String?
+    var isLoading = false
 }
 
 // MARK: - Actions

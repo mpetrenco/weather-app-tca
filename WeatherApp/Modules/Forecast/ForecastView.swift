@@ -27,6 +27,10 @@ struct ForecastView: View {
                         .aspectRatio(contentMode: .fit)
                         .background(Color.red)
                     
+                    if viewStore.isLoading {
+                        ForecastLoadingView()
+                    }
+                    
                     if let weather = viewStore.weather {
                         ForecastContentView(weather: weather)
                     }

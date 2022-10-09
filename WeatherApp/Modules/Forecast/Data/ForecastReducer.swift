@@ -11,7 +11,13 @@ import Networking
 // MARK: - Reducer
 
 let forecastReducer = ForecastReducer { state, action, environment in
+    
+    state.isLoading = true
+    state.weather = nil
+    state.errorMessage = nil
+    
     switch action {
+
     case let .fetchWeather(latitude, longitude):
         return .task {
             let result = await environment.weatherService.fetchCurrentWeather(
@@ -23,6 +29,7 @@ let forecastReducer = ForecastReducer { state, action, environment in
         }
         
     case .handleWeatherResponse(.success(let response)):
+        state.isLoading = false
         state.weather = response
         return .none
         
@@ -39,6 +46,7 @@ let forecastReducer = ForecastReducer { state, action, environment in
             state.errorMessage = "Something went wrong!"
         }
         
+        state.isLoading = false
         return .none
     }
 }
