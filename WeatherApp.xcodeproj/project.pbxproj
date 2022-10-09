@@ -15,6 +15,8 @@
 		52AD4A1B28F32971001B3DEA /* WeatherService in Frameworks */ = {isa = PBXBuildFile; productRef = 52AD4A1A28F32971001B3DEA /* WeatherService */; };
 		52AD4A2228F37D79001B3DEA /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A2128F37D79001B3DEA /* ForecastData.swift */; };
 		52AD4A2528F3808F001B3DEA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 52AD4A2428F3808F001B3DEA /* ComposableArchitecture */; };
+		52AD4A2728F380F4001B3DEA /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A2628F380F4001B3DEA /* ForecastView.swift */; };
+		52AD4A2928F38216001B3DEA /* ForecastReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A2828F38216001B3DEA /* ForecastReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		52AD4A1828F32966001B3DEA /* WeatherService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WeatherService; path = Packages/WeatherService; sourceTree = "<group>"; };
 		52AD4A1C28F32D06001B3DEA /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = Packages/Networking; sourceTree = "<group>"; };
 		52AD4A2128F37D79001B3DEA /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		52AD4A2628F380F4001B3DEA /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		52AD4A2828F38216001B3DEA /* ForecastReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				52AD4A2128F37D79001B3DEA /* ForecastData.swift */,
+				52AD4A2628F380F4001B3DEA /* ForecastView.swift */,
+				52AD4A2828F38216001B3DEA /* ForecastReducer.swift */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AD49FE28F3263A001B3DEA /* Image+Extensions.swift in Sources */,
+				52AD4A2928F38216001B3DEA /* ForecastReducer.swift in Sources */,
+				52AD4A2728F380F4001B3DEA /* ForecastView.swift in Sources */,
 				52472E4F28F322650006B213 /* WeatherApp.swift in Sources */,
 				52AD4A2228F37D79001B3DEA /* ForecastData.swift in Sources */,
 				52AD49FC28F3262D001B3DEA /* Color+Extensions.swift in Sources */,

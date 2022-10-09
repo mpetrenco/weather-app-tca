@@ -6,12 +6,26 @@
 //
 
 import SwiftUI
+import WeatherService
+import Networking
 
 @main
 struct WeatherAppApp: App {
+    
+    let store = ForecastStore(
+        initialState: ForecastState(),
+        reducer: forecastReducer,
+        environment: ForecastEnvironment(
+            weatherService: OpenWeatherService(
+                networkClient: DefaultNetworkClient(),
+                apiKey: "<#YOUR_API_KEY#>"
+            )
+        )
+    )
+    
     var body: some Scene {
         WindowGroup {
-            Color.yellow.ignoresSafeArea()
+            ForecastView(store: store)
         }
     }
 }
