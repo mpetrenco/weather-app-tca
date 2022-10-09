@@ -6,10 +6,10 @@
 
 import Foundation
 
-public enum NetworkError: Error {
+public enum NetworkError: Error, Equatable {
     case invalidURL
     case invalidData
-    case unknown
+    case invalidResponse
     case fail(Int)
 }
 
@@ -21,7 +21,7 @@ public struct DefaultNetworkClient: NetworkClient {
     
     // MARK: - Initializers
     
-    init(urlSession: URLSession = URLSession.shared) {
+    public init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
     
@@ -40,7 +40,7 @@ public struct DefaultNetworkClient: NetworkClient {
             let (data, response) = try await urlSession.data(from: url)
             
             guard let httpResponse = response as? HTTPURLResponse else {
-                return .failure(NetworkError.unknown)
+                return .failure(NetworkError.invalidResponse)
             }
             
             guard httpResponse.statusCode == 200 else {
