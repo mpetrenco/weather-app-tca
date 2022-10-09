@@ -20,7 +20,7 @@ struct ForecastView: View {
                 
                 Color.weatherSunny
                 
-                VStack {
+                VStack(spacing: 24.0) {
                     
                     Image.forecastSunny
                         .resizable()
@@ -45,6 +45,8 @@ struct ForecastView: View {
                             }
                         )
                     }
+                    
+                    Spacer()
                 }
             }
             .ignoresSafeArea()

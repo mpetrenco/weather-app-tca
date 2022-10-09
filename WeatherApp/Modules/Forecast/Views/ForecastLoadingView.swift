@@ -12,14 +12,7 @@ struct ForecastLoadingView: View {
     // MARK: - UI Rendering
     
     var body: some View {
-        
-        VStack() {
-
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: .appText))
-                .padding(.top, 64.0)
-            
-            Spacer()
-        }
+        ProgressView()
+            .progressViewStyle(CircularProgressViewStyle(tint: .appText))
     }
 }

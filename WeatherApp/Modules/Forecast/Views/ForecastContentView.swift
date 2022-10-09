@@ -18,20 +18,18 @@ struct ForecastContentView: View {
     
     var body: some View {
         
-        VStack {
-
+        VStack(spacing: 24.0) {
+            
             DailyForecastView(
                 minTemperature: weather.temperature.min,
                 currentTemperature: weather.temperature.current,
                 maxTemperature: weather.temperature.max
             )
-            .padding(24.0)
+            .padding(.horizontal, 24.0)
             
             Divider()
                 .frame(height: 1)
                 .overlay(Color.appText)
-            
-            Spacer()
         }
     }
 }

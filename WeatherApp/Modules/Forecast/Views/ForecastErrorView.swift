@@ -24,15 +24,12 @@ struct ForecastErrorView: View {
             Text(message)
                 .foregroundColor(.appText)
                 .font(.appBody)
-                .padding(.top, 64.0)
             
             Button(action: onRetryTap) {
                 Text("Retry?")
                     .foregroundColor(.appText)
                     .font(.appBodyBold)
             }
-            
-            Spacer()
         }
     }
 }
