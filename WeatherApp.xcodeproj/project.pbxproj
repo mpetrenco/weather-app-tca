@@ -23,6 +23,7 @@
 		52AD49FB28F3262D001B3DEA /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		52AD49FD28F3263A001B3DEA /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		52AD4A1828F32966001B3DEA /* WeatherService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WeatherService; path = Packages/WeatherService; sourceTree = "<group>"; };
+		52AD4A1C28F32D06001B3DEA /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = Packages/Networking; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +87,7 @@
 		52AD4A1728F32966001B3DEA /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				52AD4A1C28F32D06001B3DEA /* Networking */,
 				52AD4A1828F32966001B3DEA /* WeatherService */,
 			);
 			name = Packages;

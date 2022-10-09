@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol WeatherService {
-    
+        
     func fetchCurrentWeather(
         latitude: Double,
         longitude: Double

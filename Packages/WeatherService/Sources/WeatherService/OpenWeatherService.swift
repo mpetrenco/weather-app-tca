@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Networking
 
 private enum OpenWeatherEndpoint: String {
     case currentWeather = "weather"
@@ -17,10 +18,12 @@ public struct OpenWeatherService: WeatherService {
     // MARK: - Properties
     
     private let apiKey: String
+    private let networkClient: NetworkClient
     
     // MARK: - Initializers
     
-    public init(with apiKey: String) {
+    public init(networkClient: NetworkClient, apiKey: String) {
+        self.networkClient = networkClient
         self.apiKey = apiKey
     }
     
@@ -72,9 +75,9 @@ public struct OpenWeatherService: WeatherService {
             URLQueryItem(name: "units", value: "metric"),
         ]
         
-        return await URLSession.shared.request(
+        return await networkClient.get(
             url: components?.url,
-            expecting: type.self
+            expecting: type
         )
     }
 }
