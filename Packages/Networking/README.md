@@ -5,7 +5,7 @@ A package used to handle all HTTP method calls and parse the response.
 ## Details:
 
 - **Minimum target:** iOS 15
-- **Current coverage:** 0%
+- **Current coverage:** 100%
 
 ## Usage:
 
