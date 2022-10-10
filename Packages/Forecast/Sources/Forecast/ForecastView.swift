@@ -32,10 +32,7 @@ public struct ForecastView: View {
                 
                 VStack(spacing: 24.0) {
                     
-                    image(for: viewStore.weather?.type ?? .sunny)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .background(Color.red)
+                    ForecastHeaderView(state: viewStore.state)
                     
                     if viewStore.isLoading {
                         ForecastLoadingView()
