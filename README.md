@@ -2,6 +2,8 @@
 
 A weather forecast application developed using `SwiftUI` and `TCA`.
 
+![Demo](.gitassets/demo.png)
+
 ## Features:
 - Fetch the current weather details at user coordinates;
 - Fetch the 3-hour interval forecast for the next 5 days;
