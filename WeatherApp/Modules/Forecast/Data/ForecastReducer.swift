@@ -18,6 +18,18 @@ let forecastReducer = ForecastReducer { state, action, environment in
     
     switch action {
         
+    case .fetchUserLocation:
+        return .merge(
+            environment
+                .locationManager
+                .delegate()
+                .map(ForecastAction.locationManager),
+            
+                .task {
+                    .determineLocationAvailability
+                }
+        )
+        
     case .determineLocationAvailability:
         switch environment.locationManager.authorizationStatus() {
         case .restricted, .denied:
@@ -40,18 +52,6 @@ let forecastReducer = ForecastReducer { state, action, environment in
             state.locationErrorMessage = "Unknown location error"
             return .none
         }
-        
-    case .fetchUserLocation:
-        return .merge(
-            environment
-                .locationManager
-                .delegate()
-                .map(ForecastAction.locationManager),
-
-            .task {
-                .determineLocationAvailability
-            }
-        )
         
     case .locationManager(.didChangeAuthorization(.authorizedAlways)),
             .locationManager(.didChangeAuthorization(.authorizedWhenInUse)):
@@ -80,12 +80,11 @@ let forecastReducer = ForecastReducer { state, action, environment in
         
     case .locationManager:
         return .none
-    
+        
     case .fetchWeather:
         guard let coordinates = state.coordinates else { return .none }
-
+        
         return .task {
-            
             let result = await environment.weatherService.fetchCurrentWeather(
                 latitude: coordinates.x,
                 longitude: coordinates.y
