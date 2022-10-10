@@ -8,6 +8,7 @@
 import SwiftUI
 import WeatherService
 import Networking
+import Forecast
 
 @main
 struct WeatherAppApp: App {

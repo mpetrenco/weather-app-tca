@@ -10,7 +10,7 @@ import Networking
 
 // MARK: - Reducer
 
-let forecastReducer = ForecastReducer { state, action, environment in
+public let forecastReducer = ForecastReducer { state, action, environment in
     
     state.isLoading = true
     state.networkErrorMessage = nil

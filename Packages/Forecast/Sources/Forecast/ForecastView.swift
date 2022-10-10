@@ -8,11 +8,21 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct ForecastView: View {
+public struct ForecastView: View {
     
-    let store: ForecastStore
+    // MARK: - Propeties
     
-    var body: some View {
+    public let store: ForecastStore
+    
+    // MARK: - Initializers
+    
+    public init(store: ForecastStore) {
+        self.store = store
+    }
+    
+    // MARK: - UI Rendering
+    
+    public var body: some View {
         
         WithViewStore(store, observe: { $0 }) { viewStore in
             
