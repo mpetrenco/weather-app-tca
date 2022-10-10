@@ -50,6 +50,7 @@
 		52CA9E5428F420A700E31F49 /* ForecastItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastItemView.swift; sourceTree = "<group>"; };
 		52CA9E5628F4212400E31F49 /* ForecastSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSectionView.swift; sourceTree = "<group>"; };
 		52CA9E5828F4256200E31F49 /* ForecastListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListView.swift; sourceTree = "<group>"; };
+		52CA9E5A28F4265C00E31F49 /* Forecast */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Forecast; path = Packages/Forecast; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 		52AD4A1728F32966001B3DEA /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				52CA9E5A28F4265C00E31F49 /* Forecast */,
 				52AD4A1C28F32D06001B3DEA /* Networking */,
 				52AD4A1828F32966001B3DEA /* WeatherService */,
 			);

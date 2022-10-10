@@ -29,8 +29,8 @@ enum ForecastAction {
     case fetchWeather
     case fetchForecast
     case handleWeatherResponse(Result<Weather, Error>)
-    case locationManager(LocationManager.Action)
     case handleForecastResponse(Result<Forecast, Error>)
+    case locationManager(LocationManager.Action)
 }
 
 // MARK: - Environment
