@@ -18,7 +18,7 @@ struct ForecastHeaderView: View {
         
         ZStack {
             
-            image(for: state.weather?.type ?? .sunny)
+            backgroundImage(for: state.weather?.type ?? .sunny)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .background(Color.red)
@@ -26,7 +26,7 @@ struct ForecastHeaderView: View {
             if let name = state.forecast?.city.name {
                 Text(name)
                     .foregroundColor(.appText)
-                    .font(.largeTitle)
+                    .font(.appTitle)
             }
         }
     }

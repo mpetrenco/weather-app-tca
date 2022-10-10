@@ -56,7 +56,7 @@ func groupWeatherByDay(_ weatherBundle: [Weather]) -> [Date: [Weather]] {
     }
 }
 
-func image(for weatherType: WeatherType) -> Image {
+func backgroundImage(for weatherType: WeatherType) -> Image {
     switch weatherType {
     case .sunny:
         return .forecastSunny
@@ -64,6 +64,17 @@ func image(for weatherType: WeatherType) -> Image {
         return .forecastCloudy
     case .rainy:
         return .forecastRainy
+    }
+}
+
+func icon(for weatherType: WeatherType) -> Image {
+    switch weatherType {
+    case .sunny:
+        return .iconSunny
+    case .cloudy:
+        return .iconCloudy
+    case .rainy:
+        return .iconRainy
     }
 }
 

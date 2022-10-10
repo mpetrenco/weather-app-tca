@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import WeatherService
 
 struct ForecastItemView: View {
     
     // MARK: - Properties
     
-    let dateTime: Double
-    let temperature: Double
+    let weather: Weather
     
     // MARK: - UI Rendering
     
@@ -20,15 +20,18 @@ struct ForecastItemView: View {
         
         HStack {
             
-            Text(timeFormattedDateTime(dateTime))
+            Text(timeFormattedDateTime(weather.dateTime))
                 .foregroundColor(.appText)
                 .font(.appBody)
             
             Spacer()
             
-            Text(weatherFormattedValue(temperature))
+            icon(for: weather.type)
+            
+            Text(weatherFormattedValue(weather.temperature.current))
                 .foregroundColor(.appText)
                 .font(.appBodyBold)
+                .frame(width: 80.0, alignment: .trailing)
         }
     }
 }
