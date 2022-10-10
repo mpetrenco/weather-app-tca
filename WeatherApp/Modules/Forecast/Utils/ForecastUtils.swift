@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WeatherService
 
 // MARK: - Formatters
 
@@ -40,3 +41,16 @@ func timeFormattedDate(_ date: Date) -> String {
     dateFormatter.dateFormat = "HH:mm"
     return dateFormatter.string(from: date)
 }
+
+// MARK: - Forecast Mapping
+
+func groupWeatherByDay(_ weatherBundle: [Weather]) -> [Date: [Weather]] {
+    return Dictionary(grouping: weatherBundle) { weather in
+        let components = Calendar.current.dateComponents(
+            [.day, .month, .year],
+            from: Date(timeIntervalSince1970: weather.dateTime)
+        )
+        return Calendar.current.date(from: components) ?? .now
+    }
+}
+

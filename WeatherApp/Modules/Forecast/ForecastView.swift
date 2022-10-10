@@ -35,8 +35,14 @@ struct ForecastView: View {
                         ForecastContentView(weather: weather)
                     }
                     
+                    if let forecast = viewStore.forecast {
+                        ForecastListView(weatherBundle: forecast.weatherBundle)
+                            .padding(.horizontal, 24.0)
+                    }
+                    
                     if let errorMessage = viewStore.locationErrorMessage {
                         ForecastErrorView(message: errorMessage)
+                            .padding(24.0)
                     }
                     
                     if let errorMessage = viewStore.networkErrorMessage {
@@ -44,6 +50,7 @@ struct ForecastView: View {
                             message: errorMessage,
                             onRetryTap: { viewStore.send(.fetchWeather) }
                         )
+                        .padding(24.0)
                     }
                     
                     Spacer()

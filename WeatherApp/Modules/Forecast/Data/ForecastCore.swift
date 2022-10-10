@@ -14,6 +14,7 @@ import WeatherService
 
 struct ForecastState: Equatable {
     var weather: Weather?
+    var forecast: Forecast?
     var coordinates: CGPoint?
     var networkErrorMessage: String?
     var locationErrorMessage: String?
@@ -26,8 +27,10 @@ enum ForecastAction {
     case fetchUserLocation
     case determineLocationAvailability
     case fetchWeather
+    case fetchForecast
     case handleWeatherResponse(Result<Weather, Error>)
     case locationManager(LocationManager.Action)
+    case handleForecastResponse(Result<Forecast, Error>)
 }
 
 // MARK: - Environment

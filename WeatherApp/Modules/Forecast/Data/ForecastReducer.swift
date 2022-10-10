@@ -74,8 +74,9 @@ let forecastReducer = ForecastReducer { state, action, environment in
             y: lastLocation.coordinate.longitude
         )
         
-        return .task {
-            return .fetchWeather
+        return .run { send in
+            await send(.fetchWeather)
+            await send(.fetchForecast)
         }
         
     case .locationManager:
@@ -93,6 +94,18 @@ let forecastReducer = ForecastReducer { state, action, environment in
             return .handleWeatherResponse(result)
         }
         
+    case .fetchForecast:
+        guard let coordinates = state.coordinates else { return .none }
+        
+        return .task {
+            let result = await environment.weatherService.fetchForecast(
+                latitude: coordinates.x,
+                longitude: coordinates.y
+            )
+            
+            return .handleForecastResponse(result)
+        }
+        
     case .handleWeatherResponse(.success(let response)):
         state.isLoading = false
         state.weather = response
@@ -104,6 +117,27 @@ let forecastReducer = ForecastReducer { state, action, environment in
             switch networkError {
             case .fail(let statusCode):
                 state.networkErrorMessage = "Weather fetch failed with status \(statusCode)"
+            default:
+                state.networkErrorMessage = "Something went wrong!"
+            }
+        } else {
+            state.networkErrorMessage = "Something went wrong!"
+        }
+        
+        state.isLoading = false
+        return .none
+        
+    case .handleForecastResponse(.success(let response)):
+        state.isLoading = false
+        state.forecast = response
+        return .none
+        
+    case .handleForecastResponse(.failure(let error)):
+        
+        if let networkError = error as? NetworkError {
+            switch networkError {
+            case .fail(let statusCode):
+                state.networkErrorMessage = "Forecast fetch failed with status \(statusCode)"
             default:
                 state.networkErrorMessage = "Something went wrong!"
             }
