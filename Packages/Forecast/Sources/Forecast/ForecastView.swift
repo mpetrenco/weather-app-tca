@@ -28,11 +28,11 @@ public struct ForecastView: View {
             
             ZStack {
                 
-                Color.weatherSunny
+                color(for: viewStore.weather?.type ?? .sunny)
                 
                 VStack(spacing: 24.0) {
                     
-                    Image.forecastSunny
+                    image(for: viewStore.weather?.type ?? .sunny)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .background(Color.red)

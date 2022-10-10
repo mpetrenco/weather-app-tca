@@ -7,6 +7,8 @@
 
 import Foundation
 import WeatherService
+import Resources
+import SwiftUI
 
 // MARK: - Formatters
 
@@ -54,3 +56,24 @@ func groupWeatherByDay(_ weatherBundle: [Weather]) -> [Date: [Weather]] {
     }
 }
 
+func image(for weatherType: WeatherType) -> Image {
+    switch weatherType {
+    case .sunny:
+        return .forecastSunny
+    case .cloudy:
+        return .forecastCloudy
+    case .rainy:
+        return .forecastRainy
+    }
+}
+
+func color(for weatherType: WeatherType) -> Color {
+    switch weatherType {
+    case .sunny:
+        return .forecastSunny
+    case .cloudy:
+        return .forecastCloudy
+    case .rainy:
+        return .forecastRainy
+    }
+}

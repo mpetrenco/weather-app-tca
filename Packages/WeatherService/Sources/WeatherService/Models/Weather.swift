@@ -21,6 +21,13 @@ public struct Weather: Codable, Equatable {
     public let data: [WeatherData]
     public let temperature: Temperature
     
+    // MARK: - Convenience Properties
+    
+    public var type: WeatherType {
+        guard let name = data.first?.name else { return .sunny }
+        return WeatherType(rawValue: name) ?? .sunny
+    }
+    
     // MARK: - CodingKeys
     
     enum CodingKeys: String, CodingKey {
