@@ -9,20 +9,34 @@ import Foundation
 
 // MARK: - Formatters
 
-private var weatherFormatter: NumberFormatter = {
-    let numberFormatter = NumberFormatter()
-    numberFormatter.maximumFractionDigits = 1
-    return numberFormatter
-}()
+private let numberFormatter = NumberFormatter()
+private let dateFormatter = DateFormatter()
 
 // MARK: - Formatting Methods
 
 func weatherFormattedValue(_ value: Double) -> String {
+    numberFormatter.maximumFractionDigits = 1
+    
     let number = NSNumber(floatLiteral: value)
     
-    guard let stringValue = weatherFormatter.string(from: number) else {
+    guard let stringValue = numberFormatter.string(from: number) else {
         return "N/A"
     }
     
     return stringValue + "°"
+}
+
+func formattedDate(_ date: Date) -> String {
+    dateFormatter.dateFormat = "EEEE, MMMM d"
+    return dateFormatter.string(from: date)
+}
+
+func timeFormattedDateTime(_ dateTime: Double) -> String {
+    let date = Date(timeIntervalSince1970: dateTime)
+    return timeFormattedDate(date)
+}
+
+func timeFormattedDate(_ date: Date) -> String {
+    dateFormatter.dateFormat = "HH:mm"
+    return dateFormatter.string(from: date)
 }
