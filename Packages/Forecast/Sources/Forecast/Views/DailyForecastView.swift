@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Resources
 
 struct DailyForecastView: View {
     

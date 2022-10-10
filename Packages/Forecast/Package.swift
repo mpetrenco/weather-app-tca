@@ -13,17 +13,30 @@ let package = Package(
             targets: ["Forecast"]),
     ],
     dependencies: [
-        .package(path: "../WeatherService")
+        .package(path: "../WeatherService"),
+        .package(path: "../Resources"),
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git",
+                 from: "0.9.0"),
+        .package(url: "https://github.com/pointfreeco/composable-core-location.git",
+                 from: "0.2.0")
     ],
     targets: [
         .target(
             name: "Forecast",
             dependencies: [
-                "WeatherService"
+                "WeatherService",
+                "Resources",
+                .product(name: "ComposableArchitecture",
+                         package: "swift-composable-architecture"),
+                .product(name: "ComposableCoreLocation",
+                         package: "composable-core-location"),
             ]
         ),
         .testTarget(
             name: "ForecastTests",
-            dependencies: ["Forecast"]),
+            dependencies: [
+                "Forecast",
+            ]
+        ),
     ]
 )

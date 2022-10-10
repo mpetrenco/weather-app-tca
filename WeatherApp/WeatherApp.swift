@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import Forecast
 import WeatherService
 import Networking
-import Forecast
 
 @main
 struct WeatherAppApp: App {
@@ -20,7 +20,8 @@ struct WeatherAppApp: App {
             weatherService: OpenWeatherService(
                 networkClient: DefaultNetworkClient(),
                 apiKey: "<#YOUR_API_KEY#>"
-            )
+            ),
+            locationManager: .live
         )
     )
     

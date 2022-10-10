@@ -9,21 +9,20 @@
 /* Begin PBXBuildFile section */
 		52472E4F28F322650006B213 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52472E4E28F322650006B213 /* WeatherApp.swift */; };
 		52472E5328F322660006B213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52472E5228F322660006B213 /* Assets.xcassets */; };
-		52AD49F928F325E8001B3DEA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AD49F828F325E8001B3DEA /* Colors.xcassets */; };
-		52AD4A1B28F32971001B3DEA /* WeatherService in Frameworks */ = {isa = PBXBuildFile; productRef = 52AD4A1A28F32971001B3DEA /* WeatherService */; };
-		52AD4A2528F3808F001B3DEA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 52AD4A2428F3808F001B3DEA /* ComposableArchitecture */; };
-		52CA9E5328F40BDD00E31F49 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 52CA9E5228F40BDD00E31F49 /* ComposableCoreLocation */; };
 		52CA9E5C28F42D3700E31F49 /* Forecast in Frameworks */ = {isa = PBXBuildFile; productRef = 52CA9E5B28F42D3700E31F49 /* Forecast */; };
+		52CA9E5F28F430E900E31F49 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CA9E5E28F430E900E31F49 /* Colors.xcassets */; };
+		52CA9E6128F4376800E31F49 /* WeatherService in Frameworks */ = {isa = PBXBuildFile; productRef = 52CA9E6028F4376800E31F49 /* WeatherService */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		52472E4B28F322650006B213 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52472E4E28F322650006B213 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		52472E5228F322660006B213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52AD49F828F325E8001B3DEA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		52AD4A1828F32966001B3DEA /* WeatherService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WeatherService; path = Packages/WeatherService; sourceTree = "<group>"; };
 		52AD4A1C28F32D06001B3DEA /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = Packages/Networking; sourceTree = "<group>"; };
 		52CA9E5A28F4265C00E31F49 /* Forecast */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Forecast; path = Packages/Forecast; sourceTree = "<group>"; };
+		52CA9E5D28F42F6A00E31F49 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Resources; path = Packages/Resources; sourceTree = "<group>"; };
+		52CA9E5E28F430E900E31F49 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,10 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52CA9E5328F40BDD00E31F49 /* ComposableCoreLocation in Frameworks */,
-				52AD4A2528F3808F001B3DEA /* ComposableArchitecture in Frameworks */,
-				52AD4A1B28F32971001B3DEA /* WeatherService in Frameworks */,
 				52CA9E5C28F42D3700E31F49 /* Forecast in Frameworks */,
+				52CA9E6128F4376800E31F49 /* WeatherService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				52472E5228F322660006B213 /* Assets.xcassets */,
-				52AD49F828F325E8001B3DEA /* Colors.xcassets */,
+				52CA9E5E28F430E900E31F49 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -80,6 +77,7 @@
 		52AD4A1728F32966001B3DEA /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				52CA9E5D28F42F6A00E31F49 /* Resources */,
 				52CA9E5A28F4265C00E31F49 /* Forecast */,
 				52AD4A1C28F32D06001B3DEA /* Networking */,
 				52AD4A1828F32966001B3DEA /* WeatherService */,
@@ -111,10 +109,8 @@
 			);
 			name = WeatherApp;
 			packageProductDependencies = (
-				52AD4A1A28F32971001B3DEA /* WeatherService */,
-				52AD4A2428F3808F001B3DEA /* ComposableArchitecture */,
-				52CA9E5228F40BDD00E31F49 /* ComposableCoreLocation */,
 				52CA9E5B28F42D3700E31F49 /* Forecast */,
+				52CA9E6028F4376800E31F49 /* WeatherService */,
 			);
 			productName = WeatherApp;
 			productReference = 52472E4B28F322650006B213 /* WeatherApp.app */;
@@ -145,8 +141,6 @@
 			);
 			mainGroup = 52472E4228F322650006B213;
 			packageReferences = (
-				52AD4A2328F3808F001B3DEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				52CA9E5128F40BDD00E31F49 /* XCRemoteSwiftPackageReference "composable-core-location" */,
 			);
 			productRefGroup = 52472E4C28F322650006B213 /* Products */;
 			projectDirPath = "";
@@ -163,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52472E5328F322660006B213 /* Assets.xcassets in Resources */,
-				52AD49F928F325E8001B3DEA /* Colors.xcassets in Resources */,
+				52CA9E5F28F430E900E31F49 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,43 +368,14 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		52AD4A2328F3808F001B3DEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
-			};
-		};
-		52CA9E5128F40BDD00E31F49 /* XCRemoteSwiftPackageReference "composable-core-location" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/composable-core-location";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		52AD4A1A28F32971001B3DEA /* WeatherService */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = WeatherService;
-		};
-		52AD4A2428F3808F001B3DEA /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52AD4A2328F3808F001B3DEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
-		};
-		52CA9E5228F40BDD00E31F49 /* ComposableCoreLocation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52CA9E5128F40BDD00E31F49 /* XCRemoteSwiftPackageReference "composable-core-location" */;
-			productName = ComposableCoreLocation;
-		};
 		52CA9E5B28F42D3700E31F49 /* Forecast */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Forecast;
+		};
+		52CA9E6028F4376800E31F49 /* WeatherService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WeatherService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

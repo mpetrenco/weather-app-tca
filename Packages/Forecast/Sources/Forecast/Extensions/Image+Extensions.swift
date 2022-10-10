@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Image {
-    static let forecastSunny = Image("Forecast Sunny")
-    static let forecastCloudy = Image("Forecast Cloudy")
-    static let forecastRainy = Image("Forecast Rainy")
+    static let forecastSunny = Image("Forecast Sunny", bundle: .module)
+    static let forecastCloudy = Image("Forecast Cloudy", bundle: .module)
+    static let forecastRainy = Image("Forecast Rainy", bundle: .module)
 }

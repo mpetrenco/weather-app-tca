@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Font {
+public extension Font {
     static let appBodyBold = Font.system(size: 16.0, weight: .bold)
     static let appBody = Font.system(size: 16.0, weight: .regular)
 }
