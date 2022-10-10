@@ -35,14 +35,14 @@ struct ForecastView: View {
                         ForecastContentView(weather: weather)
                     }
                     
-                    if let errorMessage = viewStore.errorMessage {
+                    if let errorMessage = viewStore.locationErrorMessage {
+                        ForecastErrorView(message: errorMessage)
+                    }
+                    
+                    if let errorMessage = viewStore.networkErrorMessage {
                         ForecastErrorView(
                             message: errorMessage,
-                            onRetryTap: {
-                                viewStore.send(
-                                    .fetchWeather(latitude: 20.0, longitude: 20.0)
-                                )
-                            }
+                            onRetryTap: { viewStore.send(.fetchWeather) }
                         )
                     }
                     
@@ -51,9 +51,7 @@ struct ForecastView: View {
             }
             .ignoresSafeArea()
             .onAppear {
-                viewStore.send(
-                    .fetchWeather(latitude: 20.0, longitude: 20.0)
-                )
+                viewStore.send(.fetchUserLocation)
             }
         }
     }

@@ -23,6 +23,7 @@
 		52AD4A3428F38F35001B3DEA /* ForecastContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3328F38F35001B3DEA /* ForecastContentView.swift */; };
 		52AD4A3628F38F93001B3DEA /* ForecastErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3528F38F93001B3DEA /* ForecastErrorView.swift */; };
 		52AD4A3828F391DC001B3DEA /* ForecastLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD4A3728F391DC001B3DEA /* ForecastLoadingView.swift */; };
+		52CA9E5328F40BDD00E31F49 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 52CA9E5228F40BDD00E31F49 /* ComposableCoreLocation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CA9E5328F40BDD00E31F49 /* ComposableCoreLocation in Frameworks */,
 				52AD4A2528F3808F001B3DEA /* ComposableArchitecture in Frameworks */,
 				52AD4A1B28F32971001B3DEA /* WeatherService in Frameworks */,
 			);
@@ -188,6 +190,7 @@
 			packageProductDependencies = (
 				52AD4A1A28F32971001B3DEA /* WeatherService */,
 				52AD4A2428F3808F001B3DEA /* ComposableArchitecture */,
+				52CA9E5228F40BDD00E31F49 /* ComposableCoreLocation */,
 			);
 			productName = WeatherApp;
 			productReference = 52472E4B28F322650006B213 /* WeatherApp.app */;
@@ -219,6 +222,7 @@
 			mainGroup = 52472E4228F322650006B213;
 			packageReferences = (
 				52AD4A2328F3808F001B3DEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				52CA9E5128F40BDD00E31F49 /* XCRemoteSwiftPackageReference "composable-core-location" */,
 			);
 			productRefGroup = 52472E4C28F322650006B213 /* Products */;
 			projectDirPath = "";
@@ -387,6 +391,7 @@
 				DEVELOPMENT_TEAM = ZPX8K2P3Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location permissions are needed to fetch the weather at your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -414,6 +419,7 @@
 				DEVELOPMENT_TEAM = ZPX8K2P3Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location permissions are needed to fetch the weather at your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,6 +470,14 @@
 				minimumVersion = 0.9.0;
 			};
 		};
+		52CA9E5128F40BDD00E31F49 /* XCRemoteSwiftPackageReference "composable-core-location" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/composable-core-location";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -475,6 +489,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52AD4A2328F3808F001B3DEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		52CA9E5228F40BDD00E31F49 /* ComposableCoreLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52CA9E5128F40BDD00E31F49 /* XCRemoteSwiftPackageReference "composable-core-location" */;
+			productName = ComposableCoreLocation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
