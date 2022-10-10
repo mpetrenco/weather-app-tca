@@ -23,7 +23,7 @@ struct ForecastListView: View {
                 
                 let groupedWeather = groupWeatherByDay(weatherBundle)
                 
-                ForEach(Array(groupedWeather.keys), id: \.self) { date in
+                ForEach(Array(groupedWeather.keys.sorted(by: <)), id: \.self) { date in
                     ForecastSectionView(
                         date: date,
                         weatherBundle: groupedWeather[date] ?? []

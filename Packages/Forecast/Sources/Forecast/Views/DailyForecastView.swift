@@ -57,8 +57,4 @@ struct DailyForecastView: View {
             
         }
     }
-    
-    // MARK: - Helper Methods
-    
-    
 }

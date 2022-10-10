@@ -25,7 +25,10 @@ struct ForecastSectionView: View {
                 .font(.appBodyBold)
                 .foregroundColor(.appText)
             
-            ForEach(weatherBundle, id: \.dateTime) { weather in
+            ForEach(
+                weatherBundle.sorted { $0.dateTime < $1.dateTime },
+                id: \.dateTime
+            ) { weather in
                 ForecastItemView(dateTime: weather.dateTime,
                                  temperature: weather.temperature.current)
             }
