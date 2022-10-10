@@ -12,26 +12,37 @@ struct ForecastErrorView: View {
     
     // MARK: - Property
     
+    let title: String
     let message: String
-    var onRetryTap: (() -> Void)? = nil
+    var onRetryTap: () -> Void
     
     // MARK: - UI Rendering
     
     var body: some View {
         
-        VStack(spacing: 16.0) {
-                    
+        VStack(spacing: 24.0) {
+    
+            Text(title)
+                .foregroundColor(.appText)
+                .multilineTextAlignment(.center)
+                .font(.appBodyBold)
+            
             Text(message)
                 .foregroundColor(.appText)
                 .multilineTextAlignment(.center)
                 .font(.appBody)
             
-            if let retryAction = onRetryTap {
-                Button(action: retryAction) {
-                    Text("Retry?")
-                        .foregroundColor(.appText)
-                        .font(.appBodyBold)
-                }
+            Spacer()
+            
+            Button(action: onRetryTap) {
+                Text("Retry?")
+                    .foregroundColor(.appText)
+                    .font(.appBodyBold)
+                    .frame(height: 60.0)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.appAccent)
+                    .cornerRadius(8.0)
+                    .padding(.horizontal, 24.0)
             }
         }
     }

@@ -50,14 +50,19 @@ public struct ForecastView: View {
                             .padding(.horizontal, 24.0)
                     }
                     
-                    if let errorMessage = viewStore.locationErrorMessage {
-                        ForecastErrorView(message: errorMessage)
-                            .padding(24.0)
+                    if let error = viewStore.error, error.type == .location {
+                        ForecastErrorView(
+                            title: error.title,
+                            message: error.message,
+                            onRetryTap: { viewStore.send(.fetchUserLocation) }
+                        )
+                        .padding(24.0)
                     }
                     
-                    if let errorMessage = viewStore.networkErrorMessage {
+                    if let error = viewStore.error, error.type == .network {
                         ForecastErrorView(
-                            message: errorMessage,
+                            title: error.title,
+                            message: error.message,
                             onRetryTap: { viewStore.send(.fetchWeather) }
                         )
                         .padding(24.0)

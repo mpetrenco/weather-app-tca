@@ -13,8 +13,7 @@ import Networking
 public let forecastReducer = ForecastReducer { state, action, environment in
     
     state.isLoading = true
-    state.networkErrorMessage = nil
-    state.locationErrorMessage = nil
+    state.error = nil
     
     switch action {
         
@@ -34,7 +33,7 @@ public let forecastReducer = ForecastReducer { state, action, environment in
         switch environment.locationManager.authorizationStatus() {
         case .restricted, .denied:
             state.isLoading = false
-            state.locationErrorMessage = "Location permissions have not been granted. Please go to Settings and grant them manually."
+            state.error = ForecastError.permissionDenied
             return .none
             
         case .authorizedAlways, .authorizedWhenInUse:
@@ -46,11 +45,8 @@ public let forecastReducer = ForecastReducer { state, action, environment in
             return environment.locationManager
                 .requestWhenInUseAuthorization()
                 .fireAndForget()
-            
-        default:
-            state.isLoading = false
-            state.locationErrorMessage = "Unknown location error"
-            return .none
+        @unknown default:
+            preconditionFailure("Unknown location authorization status.")
         }
         
     case .locationManager(.didChangeAuthorization(.authorizedAlways)),
@@ -64,7 +60,7 @@ public let forecastReducer = ForecastReducer { state, action, environment in
             .locationManager(.didChangeAuthorization(.restricted)):
         
         state.isLoading = false
-        state.locationErrorMessage = "Location permissions have not been granted. Please go to Settings and grant them manually."
+        state.error = ForecastError.permissionDenied
         return .none
         
     case .locationManager(.didUpdateLocations(let locations)):
@@ -112,18 +108,7 @@ public let forecastReducer = ForecastReducer { state, action, environment in
         return .none
         
     case .handleWeatherResponse(.failure(let error)):
-        
-        if let networkError = error as? NetworkError {
-            switch networkError {
-            case .fail(let statusCode):
-                state.networkErrorMessage = "Weather fetch failed with status \(statusCode)"
-            default:
-                state.networkErrorMessage = "Something went wrong!"
-            }
-        } else {
-            state.networkErrorMessage = "Something went wrong!"
-        }
-        
+        updateState(&state, with: error)
         state.isLoading = false
         return .none
         
@@ -131,21 +116,23 @@ public let forecastReducer = ForecastReducer { state, action, environment in
         state.isLoading = false
         state.forecast = response
         return .none
-        
+
     case .handleForecastResponse(.failure(let error)):
-        
-        if let networkError = error as? NetworkError {
-            switch networkError {
-            case .fail(let statusCode):
-                state.networkErrorMessage = "Forecast fetch failed with status \(statusCode)"
-            default:
-                state.networkErrorMessage = "Something went wrong!"
-            }
-        } else {
-            state.networkErrorMessage = "Something went wrong!"
-        }
-        
+        updateState(&state, with: error)
         state.isLoading = false
         return .none
+    }
+}
+
+private func updateState(_ state: inout ForecastState, with error: Error) {
+    if let networkError = error as? NetworkError {
+        switch networkError {
+        case .fail(let statusCode):
+            state.error = ForecastError.requestFailed(with: statusCode)
+        default:
+            state.error = ForecastError.networkError
+        }
+    } else {
+        state.error = ForecastError.networkError
     }
 }
