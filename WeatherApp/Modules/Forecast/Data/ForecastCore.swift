@@ -1,5 +1,5 @@
 //
-//  ForecastData.swift
+//  ForecastCore.swift
 //  WeatherApp
 //
 //  Created by Mihai Petrenco on 10.10.2022.
