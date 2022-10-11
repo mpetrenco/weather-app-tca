@@ -8,11 +8,22 @@ platform :ios do
 
   desc "Run all tests"
   lane :test do
+
+    # Tests and gathers code coverage
     scan(
-      devices: "iPhone 14 Pro Max",
-      code_coverage: true
+     devices: "iPhone 14 Pro Max",
+     code_coverage: true
     )
-    slather
+
+    # Create the Cobertura XML report
+    slather(
+     cobertura_xml: true,
+     circleci: true
+    )
+
+    # Connect to Codecov and upload report
+    codecov_reporter
+
   end
 
 end
