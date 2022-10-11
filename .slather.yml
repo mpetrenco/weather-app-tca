@@ -1,0 +1,13 @@
+xcodeproj: WeatherApp.xcodeproj
+scheme: WeatherApp
+output_directory: reports
+binary_basename:
+  - Networking
+  - WeatherService
+  - Forecast
+ignore:
+  - '../../../Library/*'
+  - '../Library/Developer/*'
+  - "../**/DerivedData/*"
+  - "Packages/**/Views/*"
+  - "Packages/**/Tests/*"
