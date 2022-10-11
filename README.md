@@ -1,5 +1,7 @@
 # WeatherApp
 
+![CircleCI](https://img.shields.io/circleci/build/github/mpetrenco/weather-app-tca/main)
+
 A weather forecast application developed using `SwiftUI` and `TCA`.
 
 ![Demo](.gitassets/demo.png)
@@ -8,7 +10,7 @@ A weather forecast application developed using `SwiftUI` and `TCA`.
 - Fetch the current weather details at user coordinates;
 - Fetch the 3-hour interval forecast for the next 5 days;
 - Adjust design based on weather conditions;
-- Fully unit tested - <a href="reports/index.html" title="Check Slather reports">Check Slather reports</a>
+- Fully unit tested;
 
 ## Packages:
 |Name|Description|
@@ -17,6 +19,9 @@ A weather forecast application developed using `SwiftUI` and `TCA`.
 |`WeatherService`|Uses the `Networking` package to fetch the weather from `OpenWeather API`|
 |`Resources`|Contains all the shared assets/colors/fonts.|
 |`Forecast`|Contains the `ForecastView`, which uses the `WeatherService` package to display the current weather and a 5-day forecast at the user's location.|
+
+## Code Coverage:
+![Test Coverage](.gitassets/test-report.png)
 
 ## Dependencies:
 |Name|Description|
