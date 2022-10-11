@@ -30,3 +30,6 @@ A weather forecast application developed using `SwiftUI` and `TCA`.
 |Name|Description|
 |-|-|
 |[Slather](https://github.com/SlatherOrg/slather)|Generates code coverage reports.|
+|[CircleCI](https://circleci.com)|Handles automatic builds.|
+|[Fastlane](https://fastlane.tools)|For easy pipeline management.|
+|[Codecov](https://about.codecov.io)|For publishing code coverage results.|
