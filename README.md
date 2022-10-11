@@ -1,6 +1,6 @@
 # WeatherApp
 
-![CircleCI](https://img.shields.io/circleci/build/github/mpetrenco/weather-app-tca/main)
+![CircleCI](https://img.shields.io/circleci/build/github/mpetrenco/weather-app-tca) ![Codecov](https://img.shields.io/codecov/c/github/mpetrenco/weather-app-tca)
 
 A weather forecast application developed using `SwiftUI` and `TCA`.
 
@@ -19,9 +19,6 @@ A weather forecast application developed using `SwiftUI` and `TCA`.
 |`WeatherService`|Uses the `Networking` package to fetch the weather from `OpenWeather API`|
 |`Resources`|Contains all the shared assets/colors/fonts.|
 |`Forecast`|Contains the `ForecastView`, which uses the `WeatherService` package to display the current weather and a 5-day forecast at the user's location.|
-
-## Code Coverage:
-![Test Coverage](.gitassets/test-report.png)
 
 ## Dependencies:
 |Name|Description|
