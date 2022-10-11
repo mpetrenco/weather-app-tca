@@ -20,7 +20,7 @@ public struct Weather: Codable, Equatable {
     public let dateTime: Double
     public let data: [WeatherData]
     public let temperature: Temperature
-    
+        
     // MARK: - Convenience Properties
     
     public var type: WeatherType {

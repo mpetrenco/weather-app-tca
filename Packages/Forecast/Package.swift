@@ -16,7 +16,7 @@ let package = Package(
         .package(path: "../WeatherService"),
         .package(path: "../Resources"),
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git",
-                 from: "0.9.0"),
+                 from: "0.41.2"),
         .package(url: "https://github.com/pointfreeco/composable-core-location.git",
                  from: "0.2.0")
     ],

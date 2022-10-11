@@ -16,7 +16,7 @@ public struct ForecastError: Equatable {
     
     // MARK: - Type
     
-    enum `Type` {
+    enum `Type`: Equatable {
         case location
         case network
     }
@@ -74,11 +74,21 @@ public enum ForecastAction {
     case locationManager(LocationManager.Action)
 }
 
+extension ForecastAction: Equatable {
+    var value: String? {
+        String(describing: self).components(separatedBy: "(").first
+    }
+    
+    public static func == (lhs: ForecastAction, rhs: ForecastAction) -> Bool {
+        lhs.value == rhs.value
+    }
+}
+
 // MARK: - Environment
 
 public struct ForecastEnvironment {
-    public let weatherService: WeatherService
-    public let locationManager: LocationManager
+    public var weatherService: WeatherService
+    public var locationManager: LocationManager
     
     public init(
         weatherService: WeatherService,
