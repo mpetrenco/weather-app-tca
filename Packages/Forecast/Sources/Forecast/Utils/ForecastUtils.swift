@@ -12,21 +12,12 @@ import SwiftUI
 
 // MARK: - Formatters
 
-private let numberFormatter = NumberFormatter()
 private let dateFormatter = DateFormatter()
 
 // MARK: - Formatting Methods
 
 func weatherFormattedValue(_ value: Double) -> String {
-    numberFormatter.maximumFractionDigits = 1
-    
-    let number = NSNumber(floatLiteral: value)
-    
-    guard let stringValue = numberFormatter.string(from: number) else {
-        return "N/A"
-    }
-    
-    return stringValue + "°"
+    return "\(Int(value))°"
 }
 
 func formattedDate(_ date: Date) -> String {
