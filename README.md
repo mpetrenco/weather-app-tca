@@ -8,7 +8,7 @@ A weather forecast application developed using `SwiftUI` and `TCA`.
 - Fetch the current weather details at user coordinates;
 - Fetch the 3-hour interval forecast for the next 5 days;
 - Adjust design based on weather conditions;
-- Fully unit tested - [Check Slather report](reports/index.html)
+- Fully unit tested - <a href="reports/index.html" title="Check Slather reports">Check Slather reports</a>
 
 ## Packages:
 |Name|Description|
