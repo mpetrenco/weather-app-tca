@@ -26,8 +26,39 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ForecastTests"
+               BuildableName = "ForecastTests"
+               BlueprintName = "ForecastTests"
+               ReferencedContainer = "container:Packages/Forecast">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NetworkingTests"
+               BuildableName = "NetworkingTests"
+               BlueprintName = "NetworkingTests"
+               ReferencedContainer = "container:Packages/Networking">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "WeatherServiceTests"
+               BuildableName = "WeatherServiceTests"
+               BlueprintName = "WeatherServiceTests"
+               ReferencedContainer = "container:Packages/WeatherService">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
